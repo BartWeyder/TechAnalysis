@@ -54,11 +54,16 @@
   <ItemGroup>
     <Compile Include="ExpMATests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FastStochOpTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MStoch\MStoch.csproj">
+      <Project>{11c6c582-586e-4976-806e-6b7a2d293d2e}</Project>
+      <Name>MStoch</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SimpleMA\SimpleMA.csproj">
       <Project>{e36732ce-bbd4-4006-a1aa-83b4a40d83d2}</Project>
       <Name>SimpleMA</Name>

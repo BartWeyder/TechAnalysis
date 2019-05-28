@@ -90,10 +90,15 @@ namespace SimpleMA
             // Create new state if current does not exist.
             if (state == null)
             {
-                state = new State(SimpleMaOp.SMARawCalculate(inputs, _period));
                 // For the first value we calculate Simple MA.
-                io_outputs[0] = state.Avg;
-                io_state = state;
+                var simpleMA = SimpleMaOp.SMARawCalculate(inputs, _period);
+                if (double.IsNaN(simpleMA))
+                {
+                    io_outputs[0] = double.NaN;
+                    return;
+                }
+                io_outputs[0] = simpleMA;
+                io_state = new State(simpleMA);
                 return;
             }
 
